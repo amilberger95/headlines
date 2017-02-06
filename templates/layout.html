@@ -3,13 +3,24 @@
 	<head>
 		<title>headlines</title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/basic_stylz.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 	</head>
-    <body>
-    {% include 'header.html' %}
-    {% include 'nav.html' %}
-    <br>
-    {% include 'weather.html' %}
-    {% include 'currency.html' %}
-    {% include 'headline.html' %}
+    <body >
+    <div class = 'container-fluid'>
+        <div class="row">
+            {% include 'header.html' %}
+            {% include 'nav.html' %}
+        </div>
+
+        <div class="row">
+            {% include 'weather.html' %}
+            {% include 'currency.html' %}
+        </div>
+
+
+        <div class="row">
+            {% include 'headline.html' %}
+        </div>
+    </div>
     </body>
 </html>

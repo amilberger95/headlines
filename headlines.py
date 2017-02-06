@@ -4,6 +4,7 @@ import json
 from urllib.request import urlopen
 import urllib
 import datetime
+import ssl
 
 app = Flask(__name__)
 
@@ -40,7 +41,8 @@ def get_weather(query):
 	return weather
 
 def get_currency(frm, to):
-	all_currency = urlopen(CURRENCY_URL).read().decode('utf-8')
+	gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+	all_currency = urlopen(CURRENCY_URL, context=gcontext).read().decode('utf-8')
 	parsed = json.loads(all_currency).get('rates')
 	from_rate = parsed.get(frm.upper())
 	to_rate = parsed.get(to.upper())
