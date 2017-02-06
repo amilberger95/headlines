@@ -1,6 +1,9 @@
-
 <h1> {{n}} headlines</h1>
-<b>{{title}}</b><br/>
-<b>{{pub}}</b><br/>
-<p>{{sum}}</p><br/> 
+
+{% for article in articles %}
+	<b><a href="{{article.link}}">{{article.title}}</a></b></br>
+	<i>{{article.published}}</i><br/>
+	<p>{{article.summary}}</p><br/> 
+	<hr>
+{% endfor %}
 
