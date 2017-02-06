@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
+	<head>
+		<title>headlines</title>
+	</head>
     <body>
+    	<h2>headlines</h2>
     {% include 'nav.html' %}
     <br>
-    <form>
- 		<input type="text" name="publication" placeholder="search" />
- 		<input type="submit" value="Submit" />
-	</form>
-
+    {% include 'weather.html' %}
+    {% include 'currency.html' %}
+    <br>
     {% include 'headline.html' %}
     </body>
 </html>
